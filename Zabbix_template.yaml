@@ -1,0 +1,266 @@
+zabbix_export:
+  version: '7.4'
+  template_groups:
+    - uuid: af36653e02304d2e8e3900010d9d20c2
+      name: 'Наши шаблоны'
+  templates:
+    - uuid: efdb278d4be044b2ba5713ed7ee3606d
+      template: 'Terminal Farms. Users and Sessions'
+      name: 'Терминальные фермы. Пользователи/сессии'
+      groups:
+        - name: 'Наши шаблоны'
+      items:
+        - uuid: 28a74c813d4741648a5755ea060da727
+          name: 'Терминальная ферма get data'
+          key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalFarm.json"]'
+          delay: 30m
+          value_type: TEXT
+          timeout: 60s
+          tags:
+            - tag: TF
+              value: Sessions
+      discovery_rules:
+        - uuid: e81e872eb2b149109b26cd64bcd24393
+          name: 'Обнаружение списка ТФ'
+          type: DEPENDENT
+          key: discovery.tf.names
+          item_prototypes:
+            - uuid: 38118e5c103f44d8a2df9d8794e7a4ff
+              name: '{#NAME_TF}. Активные терминальные сессии'
+              type: DEPENDENT
+              key: 'active_session[{#NAME_TF}]'
+              trends: '0'
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tf == ''{#NAME_TF}'')].active_session'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalFarm.json"]'
+              tags:
+                - tag: ТФ
+                  value: '{#NAME_TF}'
+            - uuid: 499cfc5033d240a2bc449c30aaccda3d
+              name: '{#NAME_TF}. Всего терминальных сессий'
+              type: DEPENDENT
+              key: 'all_session[{#NAME_TF}]'
+              trends: '0'
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tf == ''{#NAME_TF}'')].all_session'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalFarm.json"]'
+              tags:
+                - tag: ТФ
+                  value: '{#NAME_TF}'
+            - uuid: 0af0014b45b5426ea1710d73a0bdce9c
+              name: '{#NAME_TF}. Количество пользователей в группе АД с разрешенным доступов на терминальную ферму'
+              type: DEPENDENT
+              key: 'count_users_member[{#NAME_TF}]'
+              trends: '0'
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tf == ''{#NAME_TF}'')].count_users_member'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalFarm.json"]'
+              tags:
+                - tag: ТФ
+                  value: '{#NAME_TF}'
+            - uuid: 82b8aab9d3804436aeb5ffa5f7128d22
+              name: '{#NAME_TF}. Неактивные терминальные сессии'
+              type: DEPENDENT
+              key: 'disconnected_session[{#NAME_TF}]'
+              trends: '0'
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tf == ''{#NAME_TF}'')].disconnected_session'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalFarm.json"]'
+              tags:
+                - tag: ТФ
+                  value: '{#NAME_TF}'
+            - uuid: fd4bbd8f900440e3a8948d8c684a3b0d
+              name: '{#NAME_TF}. Наименование'
+              type: DEPENDENT
+              key: 'name[{#NAME_TF}]'
+              value_type: TEXT
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tf == ''{#NAME_TF}'')].name_tf'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalFarm.json"]'
+              tags:
+                - tag: ТФ
+                  value: '{#NAME_TF}'
+          master_item:
+            key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalFarm.json"]'
+          lld_macro_paths:
+            - lld_macro: '{#NAME_TF}'
+              path: $.name_tf
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return JSON.stringify(JSON.parse(value), [''name_tf'']);'
+    - uuid: 58dd24b098454a71b46b03c5d1eaff3c
+      template: 'Terminal servers. Users and Sessions'
+      name: 'Терминальные сервера. Пользователи/сессии'
+      groups:
+        - name: 'Наши шаблоны'
+      items:
+        - uuid: f0d0dfe992e7475ca8259c6d993349ee
+          name: 'Терминальные сервера get data'
+          key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalServer.json"]'
+          delay: 30m
+          value_type: TEXT
+          timeout: 60s
+          tags:
+            - tag: TS
+              value: Sessions
+      discovery_rules:
+        - uuid: 2c7288e9332b46189bfa72e54bc1f13e
+          name: 'Обнаружение списка ТС'
+          type: DEPENDENT
+          key: discovery.tc.names
+          item_prototypes:
+            - uuid: f2edee998e41441291dce1212054987e
+              name: '{#NAME_TC}. Активные терминальные сессии'
+              type: DEPENDENT
+              key: 'active_session[{#NAME_TC}]'
+              trends: '0'
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tc == ''{#NAME_TC}'')].active_session'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalServer.json"]'
+              tags:
+                - tag: ТС
+                  value: '{#NAME_TC}'
+            - uuid: 83ef05b31d734333a6c063c24d0c273a
+              name: '{#NAME_TC}. Всего терминальных сессий'
+              type: DEPENDENT
+              key: 'all_session[{#NAME_TC}]'
+              trends: '0'
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tc == ''{#NAME_TC}'')].all_session'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalServer.json"]'
+              tags:
+                - tag: ТС
+                  value: '{#NAME_TC}'
+            - uuid: 615a2eb505e84c39bd847508189d9027
+              name: '{#NAME_TC}. Количество пользователей в группе АД с разрешенным доступов на терминальный сервер'
+              type: DEPENDENT
+              key: 'count_users_member[{#NAME_TC}]'
+              trends: '0'
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tc == ''{#NAME_TC}'')].count_users_member'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalServer.json"]'
+              tags:
+                - tag: ТС
+                  value: '{#NAME_TC}'
+            - uuid: 559ec4f2399846c0b4ea0582c15ee295
+              name: '{#NAME_TC}. Неактивные терминальные сессии'
+              type: DEPENDENT
+              key: 'disconnected_session[{#NAME_TC}]'
+              trends: '0'
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tc == ''{#NAME_TC}'')].disconnected_session'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalServer.json"]'
+              tags:
+                - tag: ТС
+                  value: '{#NAME_TC}'
+            - uuid: 8a58b191f33745f9b6f1e4d547e65265
+              name: '{#NAME_TC}. Наименование ТС'
+              type: DEPENDENT
+              key: 'name[{#NAME_TC}]'
+              value_type: TEXT
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - '$..[?(@.name_tc == ''{#NAME_TC}'')].name_tc'
+                - type: LTRIM
+                  parameters:
+                    - '["'
+                - type: RTRIM
+                  parameters:
+                    - '"]'
+              master_item:
+                key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalServer.json"]'
+              tags:
+                - tag: ТС
+                  value: '{#NAME_TC}'
+          master_item:
+            key: 'system.run[type "C:\Program Files\Zabbix Agent\scripts\TerminalServer.json"]'
+          lld_macro_paths:
+            - lld_macro: '{#NAME_TC}'
+              path: $.name_tc
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return JSON.stringify(JSON.parse(value), [''name_tc'']);'
