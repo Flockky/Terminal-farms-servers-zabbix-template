@@ -6,6 +6,8 @@
 1.  **Terminal Servers** — мониторинг отдельных хостов.
 2.  **Terminal Farms** — мониторинг коллекций/ферм (агрегированные данные).
 
+<img width="1579" height="776" alt="image" src="https://github.com/user-attachments/assets/e0009fb8-c5d8-4788-807e-8858020f9bb5" />
+
 ## 📂 Состав репозитория
 
 ### Шаблоны Zabbix
