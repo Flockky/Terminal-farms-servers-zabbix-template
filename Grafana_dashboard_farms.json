@@ -1,0 +1,5375 @@
+{
+  "apiVersion": "dashboard.grafana.app/v2",
+  "kind": "Dashboard",
+  "metadata": {
+    "name": "eekcm3v5axzi8a",
+    "namespace": "default",
+    "uid": "qHDgxxXgaVnediGworEk5mI7kN59Ay7VVRslIUXAzrYX",
+    "resourceVersion": "1778752500625967",
+    "generation": 36,
+    "creationTimestamp": "2025-04-29T09:46:06Z",
+    "labels": {
+      "grafana.app/deprecatedInternalID": "508"
+    },
+    "annotations": {
+      "grafana.app/createdBy": "user:aeiduvjawvh1ce",
+      "grafana.app/folder": "b1fed46e-0437-47f0-b058-bf432997a6e3",
+      "grafana.app/saved-from-ui": "Grafana v13.0.1 (a100054f)",
+      "grafana.app/updatedBy": "user:aeiduvjawvh1ce",
+      "grafana.app/updatedTimestamp": "2026-05-14T09:55:00Z",
+      "grafana.app/folderTitle": "Windows servers",
+      "grafana.app/folderUrl": "/dashboards/f/b1fed46e-0437-47f0-b058-bf432997a6e3/windows-servers"
+    }
+  },
+  "spec": {
+    "annotations": [
+      {
+        "kind": "AnnotationQuery",
+        "spec": {
+          "query": {
+            "kind": "DataQuery",
+            "group": "grafana",
+            "version": "v0",
+            "datasource": {
+              "name": "-- Grafana --"
+            },
+            "spec": {}
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "builtIn": true
+        }
+      }
+    ],
+    "cursorSync": "Off",
+    "editable": true,
+    "elements": {
+      "panel-1": {
+        "kind": "Panel",
+        "spec": {
+          "id": 1,
+          "title": "Количество пользователей в группе АД с разрешенным доступов ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Количество пользователей в группе АД с разрешенным доступов на терминальную ферму"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-10": {
+        "kind": "Panel",
+        "spec": {
+          "id": 10,
+          "title": "CPU/RAM средняя утилизация ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "1m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "CPU"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "CPU utilization"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "1m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "RAM"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Memory utilization"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "percent",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-11": {
+        "kind": "Panel",
+        "spec": {
+          "id": 11,
+          "title": "Количество ядер на пользователя ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Ядра"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Number of cores"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "default",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Пользователи"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Количество пользователей в группе АД с разрешенным доступов на терминальную ферму"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "ОЗУ"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Total memory"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "Количество ядер на пользователя",
+                      "binary": {
+                        "left": "Ядра",
+                        "operator": "/",
+                        "right": "Пользователи"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": true
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "Cores",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-12": {
+        "kind": "Panel",
+        "spec": {
+          "id": 12,
+          "title": "Количество ОЗУ на пользователя ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "ОЗУ"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Total memory"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Пользователи"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Количество пользователей в группе АД с разрешенным доступов на терминальную ферму"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "Количество ОЗУ на пользователя",
+                      "binary": {
+                        "left": "ОЗУ",
+                        "operator": "/",
+                        "right": "Пользователи"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": true
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "decbits",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-13": {
+        "kind": "Panel",
+        "spec": {
+          "id": 13,
+          "title": "Количество пользователей ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Сервера"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Zabbix agent ping"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Пользователи"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Количество пользователей в группе АД с разрешенным доступов на терминальную ферму"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "Количество пользователей на ТФ",
+                      "binary": {
+                        "left": "Пользователи",
+                        "operator": "/",
+                        "right": "Сервера"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": true
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-14": {
+        "kind": "Panel",
+        "spec": {
+          "id": 14,
+          "title": "CPU/RAM средняя утилизация по ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "1m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "CPU"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "CPU utilization"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "1m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "RAM"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Memory utilization"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "gauge",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "barShape": "flat",
+                "barWidthFactor": 0.5,
+                "effects": {
+                  "barGlow": false,
+                  "centerGlow": false,
+                  "gradient": false
+                },
+                "endpointMarker": "point",
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "segmentCount": 1,
+                "segmentSpacing": 0.3,
+                "shape": "gauge",
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto",
+                "sparkline": false,
+                "textMode": "auto"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "percent",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-15": {
+        "kind": "Panel",
+        "spec": {
+          "id": 15,
+          "title": "CPU/RAM утилизация серверов ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "$TS"
+                        },
+                        "item": {
+                          "filter": "CPU utilization"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "$TS"
+                        },
+                        "item": {
+                          "filter": "Memory utilization"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-18": {
+        "kind": "Panel",
+        "spec": {
+          "id": 18,
+          "title": "Количество пользователей ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Сервера"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Zabbix agent ping"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Активные терминальные сессии"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Активные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Неактивные терминальные сессии"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Неактивные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "Всего сессий",
+                      "binary": {
+                        "left": "Активные терминальные сессии",
+                        "right": "Неактивные терминальные сессии"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": false
+                    }
+                  }
+                },
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "Текущее",
+                      "binary": {
+                        "left": "Всего сессий",
+                        "operator": "/",
+                        "right": "Сервера"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": true
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-2": {
+        "kind": "Panel",
+        "spec": {
+          "id": 2,
+          "title": "Активные/неактивные терминальные сессии",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "last"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Активные терминальные сессии"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Активные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "last"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Неактивные терминальные сессии"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Неактивные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "Всего терминальных сессий",
+                      "binary": {
+                        "left": "Активные терминальные сессии",
+                        "right": "Неактивные терминальные сессии"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      }
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "D"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "Всего сессий"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-21": {
+        "kind": "Panel",
+        "spec": {
+          "id": 21,
+          "title": "Количество ядер на пользователя ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Сервера"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Number of cores"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Активные терминальные сессии"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Активные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Неактивные терминальные сессии"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Неактивные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "Всего сессий",
+                      "binary": {
+                        "left": "Активные терминальные сессии",
+                        "right": "Неактивные терминальные сессии"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": false
+                    }
+                  }
+                },
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "CPU ядра",
+                      "binary": {
+                        "left": "Всего сессий",
+                        "operator": "/",
+                        "right": "Сервера"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": true
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-22": {
+        "kind": "Panel",
+        "spec": {
+          "id": 22,
+          "title": "Количество ОЗУ на пользователя ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Всего памяти"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Total memory"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Активные терминальные сессии"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Активные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [
+                                "1m",
+                                "avg"
+                              ],
+                              "name": "aggregateBy",
+                              "params": [
+                                {
+                                  "name": "interval",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "function",
+                                  "options": [
+                                    "avg",
+                                    "min",
+                                    "max",
+                                    "sum",
+                                    "count",
+                                    "median",
+                                    "first",
+                                    "last"
+                                  ],
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "30m",
+                              "avg"
+                            ],
+                            "text": "aggregateBy(1m, avg)"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "Неактивные терминальные сессии"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Неактивные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "Всего сессий",
+                      "binary": {
+                        "left": "Активные терминальные сессии",
+                        "right": "Неактивные терминальные сессии"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": false
+                    }
+                  }
+                },
+                {
+                  "kind": "Transformation",
+                  "group": "calculateField",
+                  "spec": {
+                    "options": {
+                      "alias": "ОЗУ",
+                      "binary": {
+                        "left": "Всего памяти",
+                        "operator": "/",
+                        "right": "Всего сессий"
+                      },
+                      "mode": "binary",
+                      "reduce": {
+                        "reducer": "sum"
+                      },
+                      "replaceFields": true
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "ОЗУ"
+                    },
+                    "properties": [
+                      {
+                        "id": "unit",
+                        "value": "bits"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-3": {
+        "kind": "Panel",
+        "spec": {
+          "id": 3,
+          "title": "Активные/неактивные терминальные сессии",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Активные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [],
+                        "group": {
+                          "filter": "scripts server"
+                        },
+                        "host": {
+                          "filter": "CPRD-INF-SCR02"
+                        },
+                        "item": {
+                          "filter": "$TF. Неактивные терминальные сессии"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "piechart",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "displayLabels": [
+                  "value"
+                ],
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "hidden",
+                  "placement": "right",
+                  "showLegend": false,
+                  "values": []
+                },
+                "pieType": "pie",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "sort": "desc",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-7": {
+        "kind": "Panel",
+        "spec": {
+          "id": 7,
+          "title": "CPU ядра ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "CPU"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Number of cores"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-8": {
+        "kind": "Panel",
+        "spec": {
+          "id": 8,
+          "title": "ОЗУ ТФ",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "ОЗУ"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Total memory"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "bits",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-9": {
+        "kind": "Panel",
+        "spec": {
+          "id": 9,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "CPU"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Number of cores"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "alexanderzobnin-zabbix-datasource",
+                      "version": "v0",
+                      "datasource": {
+                        "name": "afm0q4z7a641sc"
+                      },
+                      "spec": {
+                        "application": {
+                          "filter": ""
+                        },
+                        "countTriggersBy": "",
+                        "evaltype": "0",
+                        "functions": [
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Aggregate",
+                              "defaultParams": [],
+                              "name": "sumSeries",
+                              "params": []
+                            },
+                            "params": [],
+                            "text": "sumSeries()"
+                          },
+                          {
+                            "added": true,
+                            "def": {
+                              "category": "Alias",
+                              "defaultParams": [],
+                              "name": "setAlias",
+                              "params": [
+                                {
+                                  "name": "alias",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "params": [
+                              "ОЗУ"
+                            ],
+                            "text": "setAlias()"
+                          }
+                        ],
+                        "group": {
+                          "filter": "$TF"
+                        },
+                        "host": {
+                          "filter": "/.*/"
+                        },
+                        "item": {
+                          "filter": "Total memory"
+                        },
+                        "itemTag": {
+                          "filter": ""
+                        },
+                        "macro": {
+                          "filter": ""
+                        },
+                        "options": {
+                          "count": false,
+                          "disableDataAlignment": false,
+                          "showDisabledItems": false,
+                          "skipEmptyValues": false,
+                          "useTrends": "false",
+                          "useZabbixValueMapping": false
+                        },
+                        "proxy": {
+                          "filter": ""
+                        },
+                        "queryType": "0",
+                        "resultFormat": "time_series",
+                        "schema": 12,
+                        "table": {
+                          "skipEmptyValues": false
+                        },
+                        "tags": {
+                          "filter": ""
+                        },
+                        "textFilter": "",
+                        "trigger": {
+                          "filter": ""
+                        }
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {
+                "maxDataPoints": 200000
+              }
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.0.1",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "Cores",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "ОЗУ"
+                    },
+                    "properties": [
+                      {
+                        "id": "unit",
+                        "value": "bits"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "layout": {
+      "kind": "RowsLayout",
+      "spec": {
+        "rows": [
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Терминальная ферма",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 9,
+                        "height": 8,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-1"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 9,
+                        "y": 0,
+                        "width": 9,
+                        "height": 8,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-2"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 18,
+                        "y": 0,
+                        "width": 6,
+                        "height": 8,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-3"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 8,
+                        "width": 9,
+                        "height": 5,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-7"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 9,
+                        "y": 8,
+                        "width": 9,
+                        "height": 5,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-8"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 18,
+                        "y": 8,
+                        "width": 6,
+                        "height": 5,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-9"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 13,
+                        "width": 18,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-10"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 18,
+                        "y": 13,
+                        "width": 6,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-14"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Текущее",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 8,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-18"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 8,
+                        "y": 0,
+                        "width": 8,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-21"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 16,
+                        "y": 0,
+                        "width": 8,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-22"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Планово",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 8,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-13"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 8,
+                        "y": 0,
+                        "width": 8,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-11"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 16,
+                        "y": 0,
+                        "width": 8,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-12"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Сервера",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 24,
+                        "height": 8,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-15"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "links": [],
+    "liveNow": false,
+    "preload": false,
+    "tags": [],
+    "timeSettings": {
+      "timezone": "browser",
+      "from": "now-24h",
+      "to": "now",
+      "autoRefresh": "5m",
+      "autoRefreshIntervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "hideTimepicker": false,
+      "fiscalYearStartMonth": 0
+    },
+    "title": "Windows servers - Калькулятор ресурсов Терминальных Ферм(ТФ)",
+    "variables": [
+      {
+        "kind": "QueryVariable",
+        "spec": {
+          "name": "TF",
+          "current": {
+            "text": "ACT01",
+            "value": "ACT01"
+          },
+          "label": "ТФ",
+          "hide": "dontHide",
+          "refresh": "onDashboardLoad",
+          "skipUrlSync": false,
+          "query": {
+            "kind": "DataQuery",
+            "group": "alexanderzobnin-zabbix-datasource",
+            "version": "v0",
+            "datasource": {
+              "name": "afm0q4z7a641sc"
+            },
+            "spec": {
+              "application": "",
+              "group": "/(^Application$|^DWH$|^CBR$|^MGMT03$|^ACT_Python$|^FIN$|^Ext_Crypto$|^Crypto$|^MGMT02$|^ACT01$)/",
+              "host": "",
+              "item": "",
+              "itemTag": "",
+              "queryType": "group"
+            }
+          },
+          "regex": "",
+          "regexApplyTo": "value",
+          "sort": "disabled",
+          "definition": "Zabbix - group",
+          "options": [],
+          "multi": false,
+          "includeAll": false,
+          "allowCustomValue": true
+        }
+      },
+      {
+        "kind": "QueryVariable",
+        "spec": {
+          "name": "TS",
+          "current": {
+            "text": [
+              "All"
+            ],
+            "value": [
+              "$__all"
+            ]
+          },
+          "label": "ТС",
+          "hide": "dontHide",
+          "refresh": "onDashboardLoad",
+          "skipUrlSync": false,
+          "query": {
+            "kind": "DataQuery",
+            "group": "alexanderzobnin-zabbix-datasource",
+            "version": "v0",
+            "datasource": {
+              "name": "afm0q4z7a641sc"
+            },
+            "spec": {
+              "application": "",
+              "group": "$TF",
+              "host": "/.*/",
+              "item": "",
+              "itemTag": "",
+              "queryType": "host"
+            }
+          },
+          "regex": "",
+          "regexApplyTo": "value",
+          "sort": "disabled",
+          "definition": "Zabbix - host",
+          "options": [],
+          "multi": true,
+          "includeAll": true,
+          "allowCustomValue": true
+        }
+      }
+    ]
+  }
+}
